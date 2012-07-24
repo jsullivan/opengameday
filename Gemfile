@@ -5,6 +5,7 @@ gem 'sqlite3'
 gem 'jquery-rails'
 gem 'activeadmin'
 gem 'meta_search'
+gem 'nokogiri'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -15,5 +16,5 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'rspec'
+  gem 'minitest'
 end
