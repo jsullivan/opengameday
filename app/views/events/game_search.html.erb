@@ -16,7 +16,7 @@
             <h3>Published</h3> <%= game.year_published %>
             <h3>Playing Time</h3> <%= game.playing_time + " minutes" %>
                 <h3># of players:</h3> <%= game.min_players + '-' + game.max_players %>
-                <h3>Description:</h3> <%= game.description.html_safe %>
+                <h3>Description:</h3> <%= game.description.html_safe.truncate(300) %>
           </div>
         </a>
       </li>
