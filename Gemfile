@@ -16,5 +16,5 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'minitest'
+  gem 'minitest-rails'
 end
