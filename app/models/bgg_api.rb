@@ -13,7 +13,7 @@ class BggApi
       results << game unless game.nil?
     end
     if results.empty?
-      raise "No games found."
+      return "none"
     else
       return results
     end
