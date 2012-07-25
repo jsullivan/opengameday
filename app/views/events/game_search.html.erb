@@ -1,21 +1,27 @@
 <div class="container">
-<h1> Which game will you play? </h1>
+<h1> Enter game name </h1>
 <%= form_tag(game_search_events_path, :method => :get) do %>
   <%= text_field_tag "title" %>
-  <%= submit_tag "Save" %>
+  <%= submit_tag "Search" %>
 <% end %>
-<div class="game-search-results">
-  <ul>
-  <% @results.each do |game| %>
-    <li>
-      <a href="">
-        <div class="game-listing">
-          <h2><%= game[1][0] %></h2>
-          <%= image_tag game[1][1] %>
-        </div>
-      </a>
-    </li>
-  <% end %>
-  </ul>
+<% if !@results.nil? %>
+  <div class="game-search-results">
+    <ul>
+    <% @results.each do |game| %>
+      <li>
+        <a href="http://boardgamegeek.com/boardgame/<%= game.id %>">
+          <div class="game-listing">
+            <h2><%= game.title %></h2>
+            <%= image_tag game.thumbnail %>
+            <h3>Published</h3> <%= game.year_published %>
+            <h3>Playing Time</h3> <%= game.playing_time + " minutes" %>
+                <h3># of players:</h3> <%= game.min_players + '-' + game.max_players %>
+                <h3>Description:</h3> <%= game.description.html_safe %>
+          </div>
+        </a>
+      </li>
+    <% end %>
+    </ul>
+    </div>
   </div>
-</div>
+<% end %>
