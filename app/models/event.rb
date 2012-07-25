@@ -1,4 +1,7 @@
 class Event < ActiveRecord::Base
-  # attr_accessible :title, :body
+
   attr_protected
+
+  validates :game_title, :presence => true
+
 end
