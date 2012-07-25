@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'activeadmin'
 gem 'meta_search'
 gem 'nokogiri'
+gem 'formtastic'
 
 # Gems used only for assets and not required
 # in production environments by default.

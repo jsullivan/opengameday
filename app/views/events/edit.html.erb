@@ -1,6 +1,18 @@
-<h1>Editing event</h1>
+<h1>Finish planning your game day</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+  <div class="game-search-results">
+    <ul>
+      <li>
+          <div class="game-listing">
+            <h2><%= @game.title %></h2>
+            <%= image_tag @game.thumbnail %>
+            <h3>Published</h3> <%= @game.year_published %>
+            <h3>Playing Time</h3> <%= @game.playing_time + " minutes" %>
+            <h3># of players:</h3> <%= @game.min_players + '-' + @game.max_players %>
+            <h3>Description:</h3> <%= @game.description.html_safe.truncate(300) %>
+          </div>
+        </li>
+      </ul>
+<%= link_to 'Preview', @event %>

@@ -152,6 +152,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   coffee-rails (~> 3.2.1)
+  formtastic
   jquery-rails
   meta_search
   minitest-rails

@@ -29,12 +29,13 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    @game = BggApi.search_id(@event.bgg_id)
   end
 
   def create
     @event = Event.new(:bgg_id => params[:bgg_id])
     @event.save
-    redirect_to @event, notice: 'Event was successfully created.'
+    redirect_to edit_event_path(@event), notice: 'Event was successfully created.'
   end
 
   def update
@@ -62,8 +63,8 @@ class EventsController < ApplicationController
   end
 
   def game_search
-    if !params[:title].nil?
-      @results = BggApi.search_name(params[:title])
+    if !params[:game_search].nil?
+      @results = BggApi.search_name(params[:game_search][:title])
     end
 
   end

@@ -1,9 +1,10 @@
 <div class="container">
 <h1> Enter game name </h1>
-<%= form_tag(game_search_events_path, :method => :get) do %>
-  <%= text_field_tag "title" %>
-  <%= submit_tag "Search" %>
+<%= semantic_form_for(:game_search, :id => "search", :method => :get, :namespace => "search") do |f| %>
+  <%= f.input "title" %>
+  <%= f.submit "Search" %>
 <% end %>
+
 <% if !@results.nil? && @results != "none" %>
   <div class="game-search-results">
     <ul>
