@@ -1,0 +1,21 @@
+<div class="container">
+<h1> Which game will you play? </h1>
+<%= form_tag(game_search_events_path, :method => :get) do %>
+  <%= text_field_tag "title" %>
+  <%= submit_tag "Save" %>
+<% end %>
+<div class="game-search-results">
+  <ul>
+  <% @results.each do |game| %>
+    <li>
+      <a href="">
+        <div class="game-listing">
+          <h2><%= game[1][0] %></h2>
+          <%= image_tag game[1][1] %>
+        </div>
+      </a>
+    </li>
+  <% end %>
+  </ul>
+  </div>
+</div>

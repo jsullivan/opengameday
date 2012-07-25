@@ -1,5 +1,6 @@
-
 class EventsController < ApplicationController
+  include BoardGameGeek
+
   def index
     @events = Event.all
 
@@ -68,4 +69,12 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def game_search
+    if !params[:title].nil?
+      @results = search_name(params[:title])
+    end
+
+  end
+  
 end
